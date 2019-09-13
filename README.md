@@ -94,8 +94,8 @@ add and commit in one step
     ```
     git commit -am "add and commit in one step"
     git commit -a -m "add and commit in one step"
-    ```
-commit --amend : commit again, and replace the last commit
+    ```  
+  commit --amend : commit again, and replace the last commit
     ```
     git commit -am "some commit here"
     some changes
