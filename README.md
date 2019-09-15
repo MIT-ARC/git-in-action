@@ -23,20 +23,20 @@ can connect to the server to retrieve the code and even lose the change history.
 Git records the snapshots instead of differences   
 other tools :  record the difference between each version, 
 it takes time to switch to another version or branch  
-<image src="https://git-scm.com/book/en/v2/images/deltas.png" width="800"></image>  
+<image src="https://git-scm.com/book/en/v2/images/deltas.png" width="600"></image>  
 Git : records the snapshots, use SHA-1 hash, 40-character string, 
 can use shorter string as long as it's unique  
-<image src="https://git-scm.com/book/en/v2/images/snapshots.png" width="800"></image> 
+<image src="https://git-scm.com/book/en/v2/images/snapshots.png" width="600"></image> 
 
 2. Working directory / staging area / local repository / remote repository  
-<image src="https://git-scm.com/book/en/v2/images/areas.png" width="800"></image> 
+<image src="https://git-scm.com/book/en/v2/images/areas.png" width="600"></image> 
 
 3. origin / master / HEAD  
 - origin : default name of remote repository  
     ``git remote add orgin git@github.com:allenwhm/git-in-action.git``  
 - master : default name of first branch  
 - HEAD : name of current branch, it's a pointer  
-<image src="https://git-scm.com/book/en/v2/images/head-to-master.png" width="800"></image> 
+<image src="https://git-scm.com/book/en/v2/images/head-to-master.png" width="600"></image> 
 
 #### Basic Action  
 1. config username / email
@@ -205,7 +205,7 @@ add one file
     <image src="https://git-scm.com/book/en/v2/images/head-to-master.png)
     - switch branch  
     ``git switch testing``
-    <image src="https://git-scm.com/book/en/v2/images/head-to-testing.png" width="800"></image> 
+    <image src="https://git-scm.com/book/en/v2/images/head-to-testing.png" width="600"></image> 
     - create and switch branch    
     ``git checkout -b testing``  
     - merge branch : git merge  branch_to_be_merged [--no-ff] [-m "message"]    
@@ -231,10 +231,10 @@ add one file
                 > may have based work on them.
     - example  
         - current status  
-        <image src="https://git-scm.com/book/en/v2/images/basic-rebase-1.png" width="800"></image> 
+        <image src="https://git-scm.com/book/en/v2/images/basic-rebase-1.png" width="600"></image> 
         - by merge  
         ``git merge experiment``  
-        <image src="https://git-scm.com/book/en/v2/images/basic-rebase-2.png" width="800"></image> 
+        <image src="https://git-scm.com/book/en/v2/images/basic-rebase-2.png" width="600"></image> 
         - by rebase : git rebase base_branch [source_branch]  
             ```
             git checkout experiment
