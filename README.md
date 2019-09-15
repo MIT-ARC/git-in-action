@@ -4,18 +4,21 @@ This repository includes basic knowledge and commands of Git,
 to let you have a quick start with the most powerful version control tool.  
 - [Git in Action](#git-in-action)
   - [Basic Concept](#basic-concept)
+       - [What is Git?](#what-is-git-)
+       - [Areas in Git](#areas-in-git)
   - [Basic Action](#basic-action)
 ## Basic Concept
-1. What is Git?  
-    <image src="https://git-scm.com/images/logos/1color-orange-lightbg@2x.png" width="500"></image>   
-    > Git is a free and open source **distributed version control system** 
-    > designed to handle everything from small to very large projects
-    > with **speed and efficiency**.  
-
-    - What is Version Control System(VCS) / Source Code Management(SCM)?
-    > The management of changes to documents, computer programs, large websites,
-    > and other collection of information.
-
+##### What is Git?     
+   - Git Introduction  
+        <image src="https://git-scm.com/images/logos/1color-orange-lightbg@2x.png" width="500"></image>   
+        > Git is a free and open source **distributed version control system** 
+        > designed to handle everything from small to very large projects
+        > with **speed and efficiency**.  
+    
+   - What is Version Control System(VCS) / Source Code Management(SCM)?
+        > The management of changes to documents, computer programs, large websites,
+        > and other collection of information.
+    
     - Why distributed?  
     Compared with traditional centralize version control system(CVCS) like Subversion(SVN),
     it avoids the single point failure, which means if the server down or lose data, no one 
@@ -30,8 +33,9 @@ to let you have a quick start with the most powerful version control tool.
     can use shorter string as long as it's unique  
     <image src="https://git-scm.com/book/en/v2/images/snapshots.png" width="600"></image> 
 
-2. Working directory / staging area / local repository / remote repository  
-    <image src="https://git-scm.com/book/en/v2/images/areas.png" width="600"></image> 
+##### Areas in Git  
+   - Working directory / staging area / local repository / remote repository  
+        <image src="https://git-scm.com/book/en/v2/images/areas.png" width="600"></image> 
 
 3. origin / master / HEAD  
     - origin : default name of remote repository  
