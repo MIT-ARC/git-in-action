@@ -5,7 +5,7 @@ include basic commands and basic knowledge.
 
 #### Basic Concept
 1. What is Git?  
-![logo](https://git-scm.com/images/logos/1color-orange-lightbg@2x.png){:width="100px"} 
+![logo](https://git-scm.com/images/logos/1color-orange-lightbg@2x.png | width=100) 
 > Git is a free and open source **distributed version control system** 
 > designed to handle everything from small to very large projects
 > with **speed and efficiency**.  
