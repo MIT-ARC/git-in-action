@@ -23,20 +23,20 @@ can connect to the server to retrieve the code and even lose the change history.
 Git records the snapshots instead of differences   
 other tools :  record the difference between each version, 
 it takes time to switch to another version or branch  
-![delta](https://git-scm.com/book/en/v2/images/deltas.png)  
+<image src="https://git-scm.com/book/en/v2/images/deltas.png" width="500"></image>  
 Git : records the snapshots, use SHA-1 hash, 40-character string, 
 can use shorter string as long as it's unique  
-![snapshots](https://git-scm.com/book/en/v2/images/snapshots.png)  
+<image src="https://git-scm.com/book/en/v2/images/snapshots.png" width="500"></image> 
 
 2. Working directory / staging area / local repository / remote repository  
-![areas](https://git-scm.com/book/en/v2/images/areas.png)  
+<image src="https://git-scm.com/book/en/v2/images/areas.png" width="500"></image> 
 
 3. origin / master / HEAD  
 - origin : default name of remote repository  
     ``git remote add orgin git@github.com:allenwhm/git-in-action.git``  
 - master : default name of first branch  
 - HEAD : name of current branch, it's a pointer  
-![head-to-master](https://git-scm.com/book/en/v2/images/head-to-master.png)  
+<image src="https://git-scm.com/book/en/v2/images/head-to-master.png" width="500"></image> 
 
 #### Basic Action  
 1. config username / email
@@ -202,18 +202,18 @@ add one file
     ``git branch -vv``  
     - create branch  
     ``git branch testing``  
-    ![create-branch](https://git-scm.com/book/en/v2/images/head-to-master.png)
+    <image src="https://git-scm.com/book/en/v2/images/head-to-master.png)
     - switch branch  
     ``git switch testing``
-    ![switch-branch](https://git-scm.com/book/en/v2/images/head-to-testing.png)  
+    <image src="https://git-scm.com/book/en/v2/images/head-to-testing.png" width="500"></image> 
     - create and switch branch    
     ``git checkout -b testing``  
     - merge branch : git merge  branch_to_be_merged [--no-ff] [-m "message"]    
-    ![branch-merge](https://git-scm.com/book/en/v2/images/basic-branching-4.png)
+    <image src="https://git-scm.com/book/en/v2/images/basic-branching-4.png)
     ``git merge hotfix``
         - fast-forward : move the pointer to the target branch pointer directly, will hide
         the merge action in commit history  
-        ![merge-ff](https://git-scm.com/book/en/v2/images/basic-branching-5.png)
+        <image src="https://git-scm.com/book/en/v2/images/basic-branching-5.png)
         - --no-ff : git merge --no-ff, will create a new commit  
     - delete branch : git branch -d branch_name  
     ``git branch -d hotfix``  
@@ -231,16 +231,16 @@ add one file
                 > may have based work on them.
     - example  
         - current status  
-        ![rebase-1](https://git-scm.com/book/en/v2/images/basic-rebase-1.png)  
+        <image src="https://git-scm.com/book/en/v2/images/basic-rebase-1.png" width="500"></image> 
         - by merge  
         ``git merge experiment``  
-        ![rebase-2](https://git-scm.com/book/en/v2/images/basic-rebase-2.png)  
+        <image src="https://git-scm.com/book/en/v2/images/basic-rebase-2.png" width="500"></image> 
         - by rebase : git rebase base_branch [source_branch]  
             ```
             git checkout experiment
             git rebase master
             ```  
-            ![rebase-3](https://git-scm.com/book/en/v2/images/basic-rebase-3.png)
+            <image src="https://git-scm.com/book/en/v2/images/basic-rebase-3.png)
 9. tags  
     - type  
         - lightwight : reference of a commit
