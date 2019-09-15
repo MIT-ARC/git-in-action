@@ -6,9 +6,10 @@ to let you have a quick start with the most powerful version control tool.
   - [Basic Concept](#basic-concept)
        - [What is Git?](#what-is-git-)
        - [Areas in Git](#areas-in-git)
+       - [origin / master / HEAD](#origin---master---head)
   - [Basic Action](#basic-action)
 ## Basic Concept
-##### What is Git?     
+### What is Git?     
    - Git Introduction  
         <image src="https://git-scm.com/images/logos/1color-orange-lightbg@2x.png" width="500"></image>   
         > Git is a free and open source **distributed version control system** 
@@ -33,16 +34,16 @@ to let you have a quick start with the most powerful version control tool.
     can use shorter string as long as it's unique  
     <image src="https://git-scm.com/book/en/v2/images/snapshots.png" width="600"></image> 
 
-##### Areas in Git  
+### Areas in Git  
    - Working directory / staging area / local repository / remote repository  
         <image src="https://git-scm.com/book/en/v2/images/areas.png" width="600"></image> 
 
-3. origin / master / HEAD  
-    - origin : default name of remote repository  
-        ``git remote add orgin git@github.com:allenwhm/git-in-action.git``  
-    - master : default name of first branch  
-    - HEAD : name of current branch, it's a pointer  
-    <image src="https://git-scm.com/book/en/v2/images/head-to-master.png" width="600"></image> 
+### origin / master / HEAD  
+   - origin : default name of remote repository  
+       ``git remote add orgin git@github.com:allenwhm/git-in-action.git``  
+   - master : default name of first branch  
+   - HEAD : name of current branch, it's a pointer  
+        <image src="https://git-scm.com/book/en/v2/images/head-to-master.png" width="600"></image> 
 
 ## Basic Action  
 1. config username / email
