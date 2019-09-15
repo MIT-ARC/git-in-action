@@ -1,7 +1,10 @@
 # Git in Action
 
 This repository includes basic knowledge and commands of Git,
-to let you have a quick start with the most powerful version control tool.
+to let you have a quick start with the most powerful version control tool.  
+- [Git in Action](#git-in-action)
+  - [Basic Concept](#basic-concept)
+  - [Basic Action](#basic-action)
 ## Basic Concept
 1. What is Git?  
     <image src="https://git-scm.com/images/logos/1color-orange-lightbg@2x.png" width="500"></image>   
