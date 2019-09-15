@@ -202,10 +202,10 @@ add one file
     ``git branch -vv``  
     - create branch  
     ``git branch testing``  
-    <image src="https://git-scm.com/book/en/v2/images/head-to-master.png)
+    <image src="https://git-scm.com/book/en/v2/images/head-to-master.png" width="600"></image>  
     - switch branch  
-    ``git switch testing``
-    <image src="https://git-scm.com/book/en/v2/images/head-to-testing.png" width="600"></image> 
+    ``git switch testing``  
+    <image src="https://git-scm.com/book/en/v2/images/head-to-testing.png" width="600"></image>   
     - create and switch branch    
     ``git checkout -b testing``  
     - merge branch : git merge  branch_to_be_merged [--no-ff] [-m "message"]    
