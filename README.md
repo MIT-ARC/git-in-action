@@ -5,7 +5,7 @@ include basic commands and basic knowledge.
 
 #### Basic Concept
 1. What is Git?  
-[---- image here ----]  
+![logo](https://git-scm.com/images/logos/1color-orange-lightbg@2x.png) 
 > Git is a free and open source **distributed version control system** 
 > designed to handle everything from small to very large projects
 > with **speed and efficiency**.  
@@ -23,20 +23,20 @@ can connect to the server to retrieve the code and even lose the change history.
 Git records the snapshots instead of differences   
 other tools :  record the difference between each version, 
 it takes time to switch to another version or branch  
-[---- image here ----]  
+![delta](https://git-scm.com/book/en/v2/images/deltas.png)  
 Git : records the snapshots, use SHA-1 hash, 40-character string, 
 can use shorter string as long as it's unique  
-[---- image here ----]  
+![snapshots](https://git-scm.com/book/en/v2/images/snapshots.png)  
 
 2. Working directory / staging area / local repository / remote repository  
-[---- image here ----]  
+![areas](https://git-scm.com/book/en/v2/images/areas.png)  
 
 3. origin / master / HEAD  
 - origin : default name of remote repository  
     ``git remote add orgin git@github.com:allenwhm/git-in-action.git``  
 - master : default name of first branch  
 - HEAD : name of current branch, it's a pointer  
-[---- image here ----]  
+![head-to-master](https://git-scm.com/book/en/v2/images/head-to-master.png)  
 
 #### Basic Action  
 1. config username / email
@@ -202,14 +202,18 @@ add one file
     ``git branch -vv``  
     - create branch  
     ``git branch testing``  
+    ![create-branch](https://git-scm.com/book/en/v2/images/head-to-master.png)
     - switch branch  
-    ``git switch testing``  
+    ``git switch testing``
+    ![switch-branch](https://git-scm.com/book/en/v2/images/head-to-testing.png)  
     - create and switch branch    
     ``git checkout -b testing``  
-    - merge branch : git merge  branch_to_be_merged [--no-ff] [-m "message"]  
+    - merge branch : git merge  branch_to_be_merged [--no-ff] [-m "message"]    
+    ![branch-merge](https://git-scm.com/book/en/v2/images/basic-branching-4.png)
     ``git merge hotfix``
         - fast-forward : move the pointer to the target branch pointer directly, will hide
         the merge action in commit history  
+        ![merge-ff](https://git-scm.com/book/en/v2/images/basic-branching-5.png)
         - --no-ff : git merge --no-ff, will create a new commit  
     - delete branch : git branch -d branch_name  
     ``git branch -d hotfix``  
@@ -227,14 +231,16 @@ add one file
                 > may have based work on them.
     - example  
         - current status  
-        image_here  
-        - by merger  
+        ![rebase-1](https://git-scm.com/book/en/v2/images/basic-rebase-1.png)  
+        - by merge  
         ``git merge experiment``  
+        ![rebase-2](https://git-scm.com/book/en/v2/images/basic-rebase-2.png)  
         - by rebase : git rebase base_branch [source_branch]  
             ```
             git checkout experiment
             git rebase master
             ```  
+            ![rebase-3](https://git-scm.com/book/en/v2/images/basic-rebase-3.png)
 9. tags  
     - type  
         - lightwight : reference of a commit
