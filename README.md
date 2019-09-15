@@ -86,20 +86,184 @@ add all files
 add one file  
     ``git add file_name``
 - commit changes to local repo (staging area -> local repo)  
-commit and write message in editor
+    commit and write message in editor
     ``git commit``  
-commit and write message at the same time  
+    commit and write message at the same time  
     ``git commit -m "commit message" ``  
-add and commit in one step  
+    add and commit in one step  
     ```
     git commit -am "add and commit in one step"
     git commit -a -m "add and commit in one step"
     ```  
-  commit --amend : commit again, and replace the last commit
+    commit --amend : commit again, and replace the last commit
     ```
     git commit -am "some commit here"
     some changes
     git commit --amend "latest commit"
     ```
-- add remote repo fpr current repo
+- add remote repo for current repo  
+    list remote repo  
+    ``git remote``  
+    list remote repo with verbose information  
+    ``git remote -v``  
+    list remote repo details  
+    ``git remote show origin``  
+    add remote repo : git remote add remote_name remote_url  
+    ``git remote add origin git@github.com:allenwhm/git-in-action.git``  
+    rename remote repo    
+    ``git remote rename origin aw``  
+    remove remote repo  
+    ``git remote rm aw``  
+- push code to remote repo : git push [remote_name] [remote_branch]  
+    ``git push origin master``  
+    ``git push``  
+    push at the first time, add -u  
+    ``git push -u origin master``  
+- if your code is already tracked by Git, set origin to push the code  
+    ```
+    cd project_diretory
+    git remote set-url origin git@github.com:allenwhm/git-in-action.git
+    git push -u origin --all
+    git push origin --tags
+    ```  
+- change remote repo url from https to git  
+    ``git remote set-url origin git@github.com:allenwhm/git-in-action.git``  
+- fetch or pull ?
+    - pull = fetch + merge  
+    fetch : fetch the latest remote repo into local repo
+    merge : merge the changes into current branch  
+    
+4. git status / diff / log  
+    - git status, check the status anytime  
+    ``git status``  
+    - check status with short message : git status [-s/--short]  
+    ``git status -s``  
+    result sample :
+        ```
+        M README.md
+        MM Rakefile
+        A lib/git.rb
+        ?? LICENSE.txt
+      
+        ?? : not tracked  
+        A : new files added to staging area  
+        M on left : modified and saved in staging area
+        M on the right : modified and not saved in staging area
+        ```  
+    - git diff [--staged(new version) / --cached]  
+        - git diff without parameters, compare the difference of unstaged files 
+        between working directory and staging area  
+        ``git diff``  
+        - git diff --staged : check difference of staged area and local repo  
+        ``git diff --stage``  
+    - git log : list all commits, order by commit time desc  
+        - without parameters  
+        ``git log``  
+        -n : limit the number  
+        ``git log -2``  
+        - p : show the difference of each commit  
+        ``git log -p -2``  
+        - --stat : show less  
+        ``git log --stat``  
+        - --pretty : format the message  
+            - oneline : one commit a line  
+            - short  
+            - full  
+            - fuller  
+            - format : eg. format:"%h - %an, %ar : %s"  
+        - --graph : show the tree of historical commits  
+            ``git log --pretty=format:"%h - %an, %ar : %s" --graph``  
+5. cancel the changes staged or in working directory  
+    - cancel the changes staged, change to unstaged status : git reset HEAD file_name  
+    ``git reset HEAD .gitignore``  
+    - cancel the changes in working directory, change to status in last commit : 
+    git checkout -- file_name  
+    ``git checkout -- .gitignore``  
+6. remove / move files  
+    - remove with Git : git rm file_name  
+    - remove with force mode -f : if file modified and saved in staging area  
+    ``git rm -f file_changed_and_staged``  
+    - remove files in remote but keep in local (push to remote before adding to .gitignore)  
+        ```
+        git rm --cached -r directory_name  
+        git rm --cached file_name
+        ```  
+    - delete manually and git rm file_name  
+    - move file : git mv file_from file_to  
+7. branch  
+    - branch, how Git distinguish itself from other VCS  
+    it will take minutes to create and switch branch in other VCS but almost in no time for Git,
+    as it only generate or move the index   
+    - list branch, star means current branch  
+    ``git branch --list``
+    - list branch with last commit  
+    ``git branch -v``  
+    - list branch with more information  
+    ``git branch -vv``  
+    - create branch  
+    ``git branch testing``  
+    - switch branch  
+    ``git switch testing``  
+    - create and switch branch    
+    ``git checkout -b testing``  
+    - merge branch : git merge  branch_to_be_merged [--no-ff] [-m "message"]  
+    ``git merge hotfix``
+        - fast-forward : move the pointer to the target branch pointer directly, will hide
+        the merge action in commit history  
+        - --no-ff : git merge --no-ff, will create a new commit  
+    - delete branch : git branch -d branch_name  
+    ``git branch -d hotfix``  
+    - branch management 
+        - git branch --merged : check branches already merged into current branch  
+        - git branch --no-merged  
+8. rebase  
+    - merge changes from two branch  
+        - merge  
+        - rebase  
+        - difference and choice 
+            - rebase makes the commit history simple
+            - follow the principles  
+                > Do not rebase commits that exists outside your repository and people
+                > may have based work on them.
+    - example  
+        - current status  
+        image_here  
+        - by merger  
+        ``git merge experiment``  
+        - by rebase : git rebase base_branch [source_branch]  
+            ```
+            git checkout experiment
+            git rebase master
+            ```  
+9. tags  
+    - type  
+        - lightwight : reference of a commit
+        - annotated : covers more information, recommend
+    - list tags : result shows in alphabetical order  
+        ``git tag``  
+    - filter tags  
+        ``git tag -l 'v1.8.*' ``  
+    - create annotated tag  
+        ``git tag -a v1.4 -m 'version 1.4' ``  
+    - create lightweight tag  
+        ``git tag v1.4-lw``  
+    - show the tag message  
+        ``git show v1.4``  
+    - amend tag with commit id  
+        ``git tag -a v1.2 9fceb02``  
+    - push tags to remote  
+        ``git push origin --tags``    
+    - push one tag to remote  
+        ``git push origin v1.4``  
+    - create branch based on tag : git checkout -b [branch_name] [tag_name]  
+        ``git checkout -b version2 v1.2``  
+    - create a branch which name different from remote  
+        ``git checkout -b sf origin/serverfix``  
+    - set local branch to track a remote branch with different name  
+        ``git checkout --track origin/serverfix``  
+        or ``git branch -u origin/serverfix``  
+10. Reference  
+    - learn Git in 30 minutes : Liao Xuefeng
+    - Pro Git 
+
     
