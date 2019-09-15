@@ -203,12 +203,12 @@ to let you have a quick start with the most powerful version control tool.
         <image src="https://git-scm.com/book/en/v2/images/head-to-master.png" width="600"></image>  
     - switch branch  
         ``git switch testing``  
-        <image src="https://git-scm.com/book/en/v2/images/head-to-testing.png" width="600"></image>   
-    - create and switch branch    
+        <image src="https://git-scm.com/book/en/v2/images/head-to-testing.png" width="600"></image>  
+    - create and switch branch  
         ``git checkout -b testing``  
-    - merge branch : git merge  branch_to_be_merged [--no-ff] [-m "message"]    
+    - merge branch : `git merge branch_to_be_merged [--no-ff] [-m "message"]`  
         <image src="https://git-scm.com/book/en/v2/images/basic-branching-4.png" width="600"></image>  
-        ``git merge hotfix``
+        ``git merge hotfix``  
             - fast-forward : move the pointer to the target branch pointer directly, will hide
             the merge action in commit history  
             <image src="https://git-scm.com/book/en/v2/images/basic-branching-5.png" width="600"></image>  
@@ -267,7 +267,7 @@ to let you have a quick start with the most powerful version control tool.
         ``git checkout --track origin/serverfix``  
         or ``git branch -u origin/serverfix``  
 10. Reference  
-    - learn Git in 30 minutes : Liao Xuefeng
-    - Pro Git 
+    - [廖雪峰 Git教程](https://www.liaoxuefeng.com/wiki/896043488029600)
+    - [Pro Git](https://git-scm.com/book/en/v2)
 
     
