@@ -1,7 +1,7 @@
 # Git in Action
 
-This repository includes basic knowledge and command samples of Git,
-to let you have a quick start with the powerful version control tool.
+This repository includes basic knowledge and commands of Git,
+to let you have a quick start with the most powerful version control tool.
 ## Basic Concept
 1. What is Git?  
     <image src="https://git-scm.com/images/logos/1color-orange-lightbg@2x.png" width="500"></image>   
@@ -9,19 +9,19 @@ to let you have a quick start with the powerful version control tool.
     > designed to handle everything from small to very large projects
     > with **speed and efficiency**.  
 
-    - What is version control system(VCS/SCM)?
-    > the management of changes to documents, computer programs, large websites,
-    > and other collection of information
+    - What is Version Control System(VCS) / Source Code Management(SCM)?
+    > The management of changes to documents, computer programs, large websites,
+    > and other collection of information.
 
     - Why distributed?  
     Compared with traditional centralize version control system(CVCS) like Subversion(SVN),
     it avoids the single point failure, which means if the server down or lose data, no one 
-    can connect to the server to retrieve the code and even lose the change history.
+    can connect to the server to retrieve code and even lose the change history.
 
     - Why speed and efficiency?  
     Git records the snapshots instead of differences  
-    other tools :  record the difference between each version, 
-    it takes time to switch to another version or branch  
+    Other VCS : record the differences between each version, 
+    so it takes time to switch to another version or branch  
     <image src="https://git-scm.com/book/en/v2/images/deltas.png" width="600"></image>  
     Git : records the snapshots, use SHA-1 hash, 40-character string, 
     can use shorter string as long as it's unique  
@@ -41,8 +41,8 @@ to let you have a quick start with the powerful version control tool.
 1. config username / email
     - config scope  
         current repository : `.git/config`  
-        global, for all repositories in current user --global : `~/.gitconfig`  
-        system, for all uses in current system --system : `/etc/gitconfig`  
+        --global, for all repositories in current user : `~/.gitconfig`  
+        --system, for all uses in current system : `/etc/gitconfig`  
     - list config  
         ``git config --list [--global/system]``  
     - config username / email  
@@ -59,65 +59,67 @@ to let you have a quick start with the powerful version control tool.
         git config --global alias.unstage 'reset HEAD --'
         git config --global alias.last 'log -1 HDEA'
         ```
-    - cancel alias
+    - cancel alias  
         ``git config --global --unset alias.st``
     
 2. clone a repo from remote server  
     - clone : `git clone repo_url [new_repo_name]`  
         ``git clone git@github.com:allenwhm/git-in-action.git``
-    - git protocol
-        - local protocol : based on file systems
-        - git : no authentication, fastest
-        - SSH : need add SSH ket into authorized_keys
+    - Git protocol
+        - local protocol : based on file system
+        - git : no authentication, the fastest
+        - SSH : need to add SSH key into authorized_keys
         - HTTP/HTTPS : most convenient, with authentication 
     
-3. init a repo with current project and publish it to git server(GitHub/Bitbucket)
-    - init repo : change directory to project folder  
+3. init a repo with current project and publish it to Git server(GitHub/Bitbucket)
+    - init repo : change directory to project folder and init   
         ```
         cd project_directory
         git init
         ```
-    - create .gitignore file to ignore files not required to be tracked
+    - create `.gitignore` file to ignore files not required to be tracked  
         ``echo target > .gitignore``    
     - add files into staging area (working directory -> staging area)  
-    add all files  
-        ``git add --all / * / .``  
-    add one file  
-        ``git add file_name``
+        - add all files  
+            ``git add --all / * / .``  
+        - add one file  
+            ``git add file_name``
     - commit changes to local repo (staging area -> local repo)  
-        commit and write message in editor
-        ``git commit``  
-        commit and write message at the same time  
-        ``git commit -m "commit message" ``  
-        add and commit in one step  
-        ```
-        git commit -am "add and commit in one step"
-        git commit -a -m "add and commit in one step"
-        ```  
-        commit --amend : commit again, and replace the last commit
-        ```
-        git commit -am "some commit here"
-        some changes
-        git commit --amend "latest commit"
-        ```
+        - commit and write message in editor  
+            ``git commit``  
+        - commit and write message at the same time  
+            ``git commit -m "commit message" ``  
+        - add and commit in one step  
+            ```
+            git commit -am "add and commit in one step" 
+            or
+            git commit -a -m "add and commit in one step"
+            ```  
+        - commit --amend : commit again, and replace the last commit  
+            ```
+            git commit -am "some commit here"
+            do some changes
+            git commit --amend "latest commit"
+            ```
     - add remote repo for current repo  
-        list remote repo  
-        ``git remote``  
-        list remote repo with verbose information  
-        ``git remote -v``  
-        list remote repo details  
-        ``git remote show origin``  
-        add remote repo : `git remote add remote_name remote_url`  
-        ``git remote add origin git@github.com:allenwhm/git-in-action.git``  
-        rename remote repo    
-        ``git remote rename origin aw``  
-        remove remote repo  
-        ``git remote rm aw``  
-    - push code to remote repo : `git push [remote_name] [remote_branch]`  
-        ``git push origin master``  
-        ``git push``  
-        push at the first time, add -u  
-        ``git push -u origin master``  
+        - list remote repo  
+            ``git remote``  
+        - list remote repo with verbose information  
+            ``git remote -v``  
+        - list remote repo details  
+            ``git remote show origin``  
+        - add remote repo : `git remote add remote_name remote_url`  
+            ``git remote add origin git@github.com:allenwhm/git-in-action.git``  
+        - rename remote repo    
+            ``git remote rename origin aw``  
+        - remove remote repo  
+            ``git remote rm aw``  
+    - push code to remote repo
+        - `git push [remote_name] [remote_branch]`  
+            ``git push origin master``  
+            ``git push``  
+        - push at the first time, add -u  
+            ``git push -u origin master``  
     - if your code is already tracked by Git, set origin to push the code  
         ```
         cd project_diretory
@@ -129,8 +131,8 @@ to let you have a quick start with the powerful version control tool.
         ``git remote set-url origin git@github.com:allenwhm/git-in-action.git``  
     - fetch or pull ?
         - pull = fetch + merge  
-        fetch : fetch the latest remote repo into local repo
-        merge : merge the changes into current branch  
+            - fetch : fetch the latest remote repo into local repo
+            - merge : merge the changes into current branch  
     
 4. git status / diff / log  
     - git status, check the status anytime  
