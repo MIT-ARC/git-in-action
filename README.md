@@ -1,42 +1,41 @@
-## Git in Action
+# Git in Action
 
-This repository is used for practice on Git, 
-include basic commands and basic knowledge.
-
-#### Basic Concept
+This repository includes basic knowledge and command samples of Git,
+to let you have a quick start with the powerful version control tool.
+## Basic Concept
 1. What is Git?  
-<image src="https://git-scm.com/images/logos/1color-orange-lightbg@2x.png" width="500"></image>   
-> Git is a free and open source **distributed version control system** 
-> designed to handle everything from small to very large projects
-> with **speed and efficiency**.  
+    <image src="https://git-scm.com/images/logos/1color-orange-lightbg@2x.png" width="500"></image>   
+    > Git is a free and open source **distributed version control system** 
+    > designed to handle everything from small to very large projects
+    > with **speed and efficiency**.  
 
-- What is version control system (VCS/SCM)?
-> the management of changes to documents, computer programs, large websites,
-> and other collection of information
+    - What is version control system(VCS/SCM)?
+    > the management of changes to documents, computer programs, large websites,
+    > and other collection of information
 
-- Why distributed?  
-Compared with traditional centralize version control system(CVCS) like Subversion(SVN),
-it avoids the single point failure, which means if the server down or lose data, no one 
-can connect to the server to retrieve the code and even lose the change history.
+    - Why distributed?  
+    Compared with traditional centralize version control system(CVCS) like Subversion(SVN),
+    it avoids the single point failure, which means if the server down or lose data, no one 
+    can connect to the server to retrieve the code and even lose the change history.
 
-- Why speed and efficiency?  
-Git records the snapshots instead of differences   
-other tools :  record the difference between each version, 
-it takes time to switch to another version or branch  
-<image src="https://git-scm.com/book/en/v2/images/deltas.png" width="600"></image>  
-Git : records the snapshots, use SHA-1 hash, 40-character string, 
-can use shorter string as long as it's unique  
-<image src="https://git-scm.com/book/en/v2/images/snapshots.png" width="600"></image> 
+    - Why speed and efficiency?  
+    Git records the snapshots instead of differences   
+    other tools :  record the difference between each version, 
+    it takes time to switch to another version or branch  
+    <image src="https://git-scm.com/book/en/v2/images/deltas.png" width="600"></image>  
+    Git : records the snapshots, use SHA-1 hash, 40-character string, 
+    can use shorter string as long as it's unique  
+    <image src="https://git-scm.com/book/en/v2/images/snapshots.png" width="600"></image> 
 
 2. Working directory / staging area / local repository / remote repository  
-<image src="https://git-scm.com/book/en/v2/images/areas.png" width="600"></image> 
+    <image src="https://git-scm.com/book/en/v2/images/areas.png" width="600"></image> 
 
 3. origin / master / HEAD  
-- origin : default name of remote repository  
-    ``git remote add orgin git@github.com:allenwhm/git-in-action.git``  
-- master : default name of first branch  
-- HEAD : name of current branch, it's a pointer  
-<image src="https://git-scm.com/book/en/v2/images/head-to-master.png" width="600"></image> 
+    - origin : default name of remote repository  
+        ``git remote add orgin git@github.com:allenwhm/git-in-action.git``  
+    - master : default name of first branch  
+    - HEAD : name of current branch, it's a pointer  
+    <image src="https://git-scm.com/book/en/v2/images/head-to-master.png" width="600"></image> 
 
 #### Basic Action  
 1. config username / email
