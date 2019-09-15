@@ -4,22 +4,22 @@ This repository includes basic knowledge and commands of Git,
 to let you have a quick start with the most powerful version control tool.  
 - [Git in Action](#git-in-action)
   - [Basic Concept](#basic-concept)
-       - [What is Git?](#what-is-git-)
-       - [Areas in Git](#areas-in-git)
+       - [What is Git?](#what-is-git)
+       - [areas in Git](#areas-in-git)
        - [origin / master / HEAD](#origin--master--head)
   - [Basic Action](#basic-action)
-       - [config username / email](#config-username---email)
+       - [config username / email](#config-username--email)
        - [clone a repo from remote server](#clone-a-repo-from-remote-server)
        - [init a repo with current project](#init-a-repo-with-current-project)
-       - [git status / diff / log](#git-status---diff---log)
+       - [git status / diff / log](#git-status--diff--log)
        - [cancel the changes staged or in working directory](#cancel-the-changes-staged-or-in-working-directory)
-       - [remove / move files](#remove---move-files)
+       - [remove / move files](#remove--move-files)
        - [branch](#branch)
        - [rebase](#rebase)
        - [tags](#tags)
        - [Reference](#reference)
 ## Basic Concept
-### What is Git?     
+### what is Git?     
    - Git Introduction  
        <image src="https://git-scm.com/images/logos/1color-orange-lightbg@2x.png" width="500"></image>   
        > Git is a free and open source **distributed version control system** 
@@ -44,7 +44,7 @@ to let you have a quick start with the most powerful version control tool.
    can use shorter string as long as it's unique  
    <image src="https://git-scm.com/book/en/v2/images/snapshots.png" width="600"></image> 
 
-### Areas in Git  
+### areas in Git  
    - Working directory / staging area / local repository / remote repository  
        <image src="https://git-scm.com/book/en/v2/images/areas.png" width="600"></image> 
 
