@@ -114,8 +114,7 @@ to let you have a quick start with the most powerful version control tool.
             ``git remote rename origin aw``  
         - remove remote repo  
             ``git remote rm aw``  
-    - push code to remote repo
-        - `git push [remote_name] [remote_branch]`  
+    - push code to remote repo : `git push [remote_name] [remote_branch]`  
             ``git push origin master``  
             ``git push``  
         - push at the first time, add -u  
@@ -136,10 +135,9 @@ to let you have a quick start with the most powerful version control tool.
     
 4. git status / diff / log  
     - git status, check the status anytime  
-    ``git status``  
+        ``git status``  
     - check status with short message : `git status [-s/--short]`  
-    ``git status -s``  
-    result sample :
+        ``git status -s``  
         ```
         M README.md
         MM Rakefile
@@ -154,18 +152,18 @@ to let you have a quick start with the most powerful version control tool.
     - git diff : `git diff [--staged(new version) / --cached]`    
         - git diff without parameters, compare the difference of unstaged files 
         between working directory and staging area  
-        ``git diff``  
+            ``git diff``  
         - git diff --staged : check difference of staged area and local repo  
-        ``git diff --stage``  
+            ``git diff --stage``  
     - git log : list all commits, order by commit time desc  
         - without parameters  
-        ``git log``  
+            ``git log``  
         -n : limit the number  
-        ``git log -2``  
+            ``git log -2``  
         - p : show the difference of each commit  
-        ``git log -p -2``  
+            ``git log -p -2``  
         - --stat : show less  
-        ``git log --stat``  
+            ``git log --stat``  
         - --pretty : format the message  
             - oneline : one commit a line  
             - short  
@@ -176,14 +174,13 @@ to let you have a quick start with the most powerful version control tool.
             ``git log --pretty=format:"%h - %an, %ar : %s" --graph``  
 5. cancel the changes staged or in working directory  
     - cancel the changes staged, change to unstaged status : `git reset HEAD file_name`  
-    ``git reset HEAD .gitignore``  
-    - cancel the changes in working directory, change to status in last commit : 
-    `git checkout -- file_name`  
-    ``git checkout -- .gitignore``  
+        ``git reset HEAD .gitignore``  
+    - cancel the changes in working directory, change to status in last commit : `git checkout -- file_name`  
+        ``git checkout -- .gitignore``  
 6. remove / move files  
     - remove with Git : `git rm file_name`  
     - remove with force mode -f : if file modified and saved in staging area  
-    ``git rm -f file_changed_and_staged``  
+        ``git rm -f file_changed_and_staged``  
     - remove files in remote but keep in local (push to remote before adding to .gitignore)  
         ```
         git rm --cached -r directory_name  
@@ -196,28 +193,28 @@ to let you have a quick start with the most powerful version control tool.
     it will take minutes to create and switch branch in other VCS but almost in no time for Git,
     as it only generate or move the index   
     - list branch, star means current branch  
-    ``git branch --list``
+        ``git branch --list``
     - list branch with last commit  
-    ``git branch -v``  
+        ``git branch -v``  
     - list branch with more information  
-    ``git branch -vv``  
+        ``git branch -vv``  
     - create branch  
-    ``git branch testing``  
-    <image src="https://git-scm.com/book/en/v2/images/head-to-master.png" width="600"></image>  
+        ``git branch testing``  
+        <image src="https://git-scm.com/book/en/v2/images/head-to-master.png" width="600"></image>  
     - switch branch  
-    ``git switch testing``  
-    <image src="https://git-scm.com/book/en/v2/images/head-to-testing.png" width="600"></image>   
+        ``git switch testing``  
+        <image src="https://git-scm.com/book/en/v2/images/head-to-testing.png" width="600"></image>   
     - create and switch branch    
-    ``git checkout -b testing``  
+        ``git checkout -b testing``  
     - merge branch : git merge  branch_to_be_merged [--no-ff] [-m "message"]    
-    <image src="https://git-scm.com/book/en/v2/images/basic-branching-4.png" width="600"></image>  
-    ``git merge hotfix``
-        - fast-forward : move the pointer to the target branch pointer directly, will hide
-        the merge action in commit history  
-        <image src="https://git-scm.com/book/en/v2/images/basic-branching-5.png" width="600"></image>  
-        - --no-ff : git merge --no-ff, will create a new commit  
+        <image src="https://git-scm.com/book/en/v2/images/basic-branching-4.png" width="600"></image>  
+        ``git merge hotfix``
+            - fast-forward : move the pointer to the target branch pointer directly, will hide
+            the merge action in commit history  
+            <image src="https://git-scm.com/book/en/v2/images/basic-branching-5.png" width="600"></image>  
+            - --no-ff : git merge --no-ff, will create a new commit  
     - delete branch : `git branch -d branch_name`  
-    ``git branch -d hotfix``  
+        ``git branch -d hotfix``  
     - branch management 
         - `git branch --merged` : check branches already merged into current branch  
         - `git branch --no-merged`  
@@ -232,10 +229,10 @@ to let you have a quick start with the most powerful version control tool.
                 > may have based work on them.
     - example  
         - current status  
-        <image src="https://git-scm.com/book/en/v2/images/basic-rebase-1.png" width="600"></image> 
+            <image src="https://git-scm.com/book/en/v2/images/basic-rebase-1.png" width="600"></image> 
         - by merge  
-        ``git merge experiment``  
-        <image src="https://git-scm.com/book/en/v2/images/basic-rebase-2.png" width="600"></image> 
+            ``git merge experiment``  
+            <image src="https://git-scm.com/book/en/v2/images/basic-rebase-2.png" width="600"></image> 
         - by rebase : `git rebase base_branch [source_branch]`  
             ```
             git checkout experiment
