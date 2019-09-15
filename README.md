@@ -5,21 +5,21 @@ to let you have a quick start with the most powerful version control tool.
 - [Git in Action](#git-in-action)
   - [Basic Concept](#basic-concept)
        - [What is Git?](#what-is-git)
-       - [areas in Git](#areas-in-git)
-       - [origin / master / HEAD](#origin--master--head)
+       - [Areas in Git](#areas-in-git)
+       - [Origin / master / HEAD](#origin--master--head)
   - [Basic Action](#basic-action)
-       - [config username / email](#config-username--email)
-       - [clone a repo from remote server](#clone-a-repo-from-remote-server)
-       - [init a repo with current project](#init-a-repo-with-current-project)
-       - [git status / diff / log](#git-status--diff--log)
-       - [cancel the changes staged or in working directory](#cancel-the-changes-staged-or-in-working-directory)
-       - [remove / move files](#remove--move-files)
-       - [branch](#branch)
-       - [rebase](#rebase)
-       - [tags](#tags)
+       - [Config username / email](#config-username--email)
+       - [Clone a repo from remote server](#clone-a-repo-from-remote-server)
+       - [Init a repo with current project](#init-a-repo-with-current-project)
+       - [Git status / diff / log](#git-status--diff--log)
+       - [Cancel the changes staged or in working directory](#cancel-the-changes-staged-or-in-working-directory)
+       - [Remove / move files](#remove--move-files)
+       - [Branch](#branch)
+       - [Rebase](#rebase)
+       - [Tags](#tags)
        - [Reference](#reference)
 ## Basic Concept
-### what is Git?     
+### What is Git?     
    - Git Introduction  
        <image src="https://git-scm.com/images/logos/1color-orange-lightbg@2x.png" width="500"></image>   
        > Git is a free and open source **distributed version control system** 
@@ -44,11 +44,11 @@ to let you have a quick start with the most powerful version control tool.
    can use shorter string as long as it's unique  
    <image src="https://git-scm.com/book/en/v2/images/snapshots.png" width="600"></image> 
 
-### areas in Git  
+### Areas in Git  
    - Working directory / staging area / local repository / remote repository  
        <image src="https://git-scm.com/book/en/v2/images/areas.png" width="600"></image> 
 
-### origin / master / HEAD  
+### Origin / master / HEAD  
    - origin : default name of remote repository  
       ``git remote add orgin git@github.com:allenwhm/git-in-action.git``  
    - master : default name of first branch  
@@ -56,7 +56,7 @@ to let you have a quick start with the most powerful version control tool.
        <image src="https://git-scm.com/book/en/v2/images/head-to-master.png" width="600"></image> 
 
 ## Basic Action  
-### config username / email
+### Config username / email
    - config scope  
        current repository : `.git/config`  
        --global, for all repositories in current user : `~/.gitconfig`  
@@ -80,7 +80,7 @@ to let you have a quick start with the most powerful version control tool.
    - cancel alias  
        ``git config --global --unset alias.st``
     
-### clone a repo from remote server  
+### Clone a repo from remote server  
    - clone : `git clone repo_url [new_repo_name]`  
        ``git clone git@github.com:allenwhm/git-in-action.git``
    - Git protocol
@@ -89,7 +89,7 @@ to let you have a quick start with the most powerful version control tool.
        - SSH : need to add SSH key into authorized_keys
        - HTTP/HTTPS : most convenient, with authentication 
     
-### init a repo with current project  
+### Init a repo with current project  
    - init a repo with current project and publish it to Git server(GitHub/Bitbucket)  
        ```
        cd project_directory
@@ -151,7 +151,7 @@ to let you have a quick start with the most powerful version control tool.
            - fetch : fetch the latest remote repo into local repo
            - merge : merge the changes into current branch  
     
-### git status / diff / log  
+### Git status / diff / log  
    - git status, check the status anytime  
        ``git status``  
    - check status with short message : `git status [-s/--short]`  
@@ -190,12 +190,12 @@ to let you have a quick start with the most powerful version control tool.
            - format : eg. `format:"%h - %an, %ar : %s"`    
        - --graph : show the tree of historical commits  
            ``git log --pretty=format:"%h - %an, %ar : %s" --graph``  
-### cancel the changes staged or in working directory  
+### Cancel the changes staged or in working directory  
    - cancel the changes staged, change to unstaged status : `git reset HEAD file_name`  
        ``git reset HEAD .gitignore``  
    - cancel the changes in working directory, change to status in last commit : `git checkout -- file_name`  
        ``git checkout -- .gitignore``  
-### remove / move files  
+### Remove / move files  
    - remove with Git : `git rm file_name`  
    - remove with force mode -f : if file modified and saved in staging area  
        ``git rm -f file_changed_and_staged``  
@@ -206,7 +206,7 @@ to let you have a quick start with the most powerful version control tool.
        ```  
    - delete manually and git rm file_name  
    - move file : `git mv file_from file_to`  
-### branch  
+### Branch  
    - branch, how Git distinguish itself from other VCS  
    it will take minutes to create and switch branch in other VCS but almost in no time for Git,
    as it only generate or move the index   
@@ -236,7 +236,7 @@ to let you have a quick start with the most powerful version control tool.
    - branch management 
        - `git branch --merged` : check branches already merged into current branch  
        - `git branch --no-merged`  
-### rebase  
+### Rebase  
    - merge changes from two branch  
        - merge  
        - rebase  
@@ -257,7 +257,7 @@ to let you have a quick start with the most powerful version control tool.
            git rebase master
            ```  
            <image src="https://git-scm.com/book/en/v2/images/basic-rebase-3.png" width="600"></image>  
-### tags  
+### Tags  
    - type  
        - lightweight : reference of a commit
        - annotated : covers more information, recommend
