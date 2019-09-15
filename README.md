@@ -209,11 +209,11 @@ add one file
     - create and switch branch    
     ``git checkout -b testing``  
     - merge branch : git merge  branch_to_be_merged [--no-ff] [-m "message"]    
-    <image src="https://git-scm.com/book/en/v2/images/basic-branching-4.png)
+    <image src="https://git-scm.com/book/en/v2/images/basic-branching-4.png" width="600"></image>  
     ``git merge hotfix``
         - fast-forward : move the pointer to the target branch pointer directly, will hide
         the merge action in commit history  
-        <image src="https://git-scm.com/book/en/v2/images/basic-branching-5.png)
+        <image src="https://git-scm.com/book/en/v2/images/basic-branching-5.png" width="600"></image>  
         - --no-ff : git merge --no-ff, will create a new commit  
     - delete branch : git branch -d branch_name  
     ``git branch -d hotfix``  
@@ -240,7 +240,7 @@ add one file
             git checkout experiment
             git rebase master
             ```  
-            <image src="https://git-scm.com/book/en/v2/images/basic-rebase-3.png)
+            <image src="https://git-scm.com/book/en/v2/images/basic-rebase-3.png" width="600"></image>  
 9. tags  
     - type  
         - lightwight : reference of a commit
